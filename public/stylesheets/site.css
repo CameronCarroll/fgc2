@@ -1,0 +1,85 @@
+body {
+  background: #fff;
+  behavior: url("csshover3.htc");
+}
+
+body.two-col div#wrapper {
+  background-image: none;
+  background: #fff;
+}
+
+#header {
+  background: #fff;
+}
+
+#nav li {
+  /*float the main list items*/
+  margin: 0;
+  float: left;
+  display: block;
+}
+
+#nav li.off ul, #nav li.on ul {
+  /*hide the subnavs & position them*/
+  display: none;
+position: absolute;
+top: 310 px;
+*top: 310px;
+height: 15px;
+left: 330 px;
+padding-top: 10px;
+z-index: 750;
+}
+
+
+#nav li a {
+  /*for all links in the list*/
+  color: #006363;
+  font-weight: bold;
+display: inline;
+  height: 10px;
+  width: 75px;
+vertical-align: top;
+}
+
+
+#nav li.on ul a, #nav li.off ul a {
+float: left;
+/* IE does not inherit float */
+border: 0;
+color: #f90;
+width: auto;
+margin-right: 15px;
+}
+
+#nav li.on ul {
+/* Disply current topic */
+/* Disbled due to hover boxes being spawned on top of active box: Very ugly. */
+/* display: inline; */
+}
+
+#nav li.off:hover ul, #nav li.on:hover ul {
+/* Display others when parent is hovered */
+display: inline;
+z-index: 6000;}
+
+#nav li.off a:hover, #nav li.off:hover a {
+background: #29497b;
+color: #f90;
+}
+
+#nav li.on a {
+/* change border for active topic */
+border: 1px solid #f90;
+}
+
+#nav li.on ul a, #nav li.off ul a {
+/* cancel border inheritance */
+border: 0;
+}
+
+#nav li.on ul {
+/* display active subnav */
+/* Disabled */
+ /* display: block; */
+}
