@@ -1,6 +1,7 @@
 body {
   background: #fff;
   behavior: url("csshover3.htc");
+  font: 12px verdana, sans-serif;
 }
 
 body.two-col div#wrapper {
@@ -12,74 +13,73 @@ body.two-col div#wrapper {
   background: #fff;
 }
 
+/* Main Nav list */
 #nav li {
-  /*float the main list items*/
   margin: 0;
   float: left;
   display: block;
 }
 
-#nav li.off ul, #nav li.on ul {
-  /*hide the subnavs & position them*/
+/* Subnav Lists */
+#nav li ul {
+font-size: 10px;
   display: none;
 position: absolute;
 top: 310 px;
 *top: 310px;
 height: 15px;
 left: 330 px;
-padding-top: 10px;
+
 z-index: 750;
 }
 
-
+/* Nav list links */
 #nav li a {
-  /*for all links in the list*/
   color: #006363;
   font-weight: bold;
+  text-decoration: none;
 display: inline;
   height: 10px;
   width: 75px;
 vertical-align: top;
 }
 
-
-#nav li.on ul a, #nav li.off ul a {
-float: left;
-/* IE does not inherit float */
-border: 0;
-color: #f90;
-width: auto;
-margin-right: 15px;
+/* Subnav list links */
+#nav li ul a {
+color: #33CCCC;
+width: 200px;
 }
 
-#nav li.on ul {
-/* Disply current topic */
-/* Disbled due to hover boxes being spawned on top of active box: Very ugly. */
-/* display: inline; */
+#nav li ul a:hover {
+
 }
 
-#nav li.off:hover ul, #nav li.on:hover ul {
+/* Subnav Lists */
+#nav li ul {
+  height: auto;
+  width: 200px;
+  background-image: url('../images/list_bg_3.png')
+    
+    
+}
+
+#nav li:hover ul {
 /* Display others when parent is hovered */
-display: inline;
+display: block;
 z-index: 6000;}
 
-#nav li.off a:hover, #nav li.off:hover a {
-background: #29497b;
-color: #f90;
+#nav li a:hover, #nav li:hover a {
+color: #33CCCC;
 }
 
-#nav li.on a {
-/* change border for active topic */
-border: 1px solid #f90;
+div.subnav_link {
+height: 40px;
+width: 180px;
+
 }
 
-#nav li.on ul a, #nav li.off ul a {
-/* cancel border inheritance */
-border: 0;
+div.subnav_link:hover {
+background-image: url('../images/list_bg.png');
 }
 
-#nav li.on ul {
-/* display active subnav */
-/* Disabled */
- /* display: block; */
-}
+
