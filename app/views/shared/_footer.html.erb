@@ -1,0 +1,15 @@
+<div id="footer">
+  <div class="left">
+    <%= hook :footer_left do %>
+    <p>
+         <%= render 'shared/search' %>    
+      </p>
+    <% end %>
+  </div>
+  <div class="right">
+  <%= hook :footer_right do %>
+  <%= render 'shared/misc_links' %>
+  <% end %>
+  </div>
+</div>   
+<%= render 'shared/google_analytics' %>

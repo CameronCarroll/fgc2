@@ -14,6 +14,9 @@ body.two-col div#wrapper {
 }
 
 /* Main Nav list */
+ul#nav {
+margin-top: 95px;
+}
 #nav li {
   margin: 0;
   float: left;
@@ -22,13 +25,15 @@ body.two-col div#wrapper {
 
 /* Subnav Lists */
 #nav li ul {
-font-size: 10px;
+line-height: 50px;
+font-size: 11px;
   display: none;
+
 position: absolute;
 top: 310 px;
 *top: 310px;
-height: 15px;
-left: 330 px;
+ height: 15px;
+ left: 300 px;
 
 z-index: 750;
 }
@@ -82,4 +87,21 @@ div.subnav_link:hover {
 background-image: url('../images/list_bg.png');
 }
 
+ul.misc_links {
+display: inline;
+list-style-type: none;
+}
 
+div#promo {
+width: auto;
+height: auto;
+  border: 1px solid blue;}
+
+div#nav_list {
+height: auto;
+position: inherit;
+vertical-align: bottom;
+}
+
+div#fgcMenu {
+}
