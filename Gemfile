@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'bundler', '1.0.15'
-gem 'rails', '3.0.7'
+gem 'bundler'
+gem 'rails'
 gem 'rake'
-gem 'mysql2', '0.2.6'
+gem 'mysql2'
 
 
 
