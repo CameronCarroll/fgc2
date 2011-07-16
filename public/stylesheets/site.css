@@ -15,11 +15,12 @@ body.two-col div#wrapper {
 
 /* Main Nav list */
 ul#nav {
-margin-top: 95px;
+position: relative;
+right: 200px;
 }
 #nav li {
   margin: 0;
-  float: left;
+  float: right;
   display: block;
 }
 

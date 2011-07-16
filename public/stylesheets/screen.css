@@ -312,7 +312,7 @@ body.two-col #content {
   color: #2e6ab1;
   clear: both;
 }
-#header a { color: #2e6ab1; }
+#header a { color: #1D7373; }
 #header a:hover { color: #eeeeee; }
 #footer {
   padding-top: 2em;
@@ -344,7 +344,7 @@ p img {
 .navigation-list li a {
   cursor: pointer !important;
   text-decoration: none;
-  color: #333333;
+  color: #1D7373;
   display: block;
   line-height: 2.5em;
   padding-left: 20px;
@@ -420,7 +420,7 @@ line-height: 50px;
   list-style: none;
   margin: 0;
   padding: 0;
-  height: 144px;
+  vertical-align: top;
 }
 ul#nav-bar li {
   float: left;
@@ -635,7 +635,7 @@ p button img { margin: 0 5px 0 0; }
   padding: 5px;
   width: 150px;
   min-height: 60px;
-  background: #ffffff url(../images/shadow_top.png) 0px -35px repeat-x;
+  /*  background: #ffffff url(../images/shadow_top.png) 0px -35px repeat-x; */
   border-top: 1px solid #ffffff;
 }
 .product-listing li a.info span { display: block; }
