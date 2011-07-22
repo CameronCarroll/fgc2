@@ -5,16 +5,18 @@
   <%= render :partial => 'shared/head'%>
   <% end %>
 </head>
+
 <%
 if @body_class.nil?
-if content_for?(:sidebar)
-@body_class = 'two-col'
-else
-@body_class = 'one-col'
+  if content_for?(:sidebar)
+    @body_class = 'two-col'
+  else
+    @body_class = 'one-col'
+  end
 end
-end
-%>
+ %>
 <body class="<%= @body_class %>" id="<%= @body_id %>">
+  
   
   <div id="header" class="container_bg">
     <div class="container">
@@ -29,7 +31,7 @@ end
   </div>
 </div>
 
-<%= render 'shared/nav_list' %>
+ <%= render 'shared/nav_list' %>
 
 <center><%= image_tag "little_divider.png"%></center>
 

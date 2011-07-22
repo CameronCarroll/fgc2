@@ -6,6 +6,14 @@ GIT
       spree_core
 
 GIT
+  remote: git://github.com/citrus/spree_wholesale
+  revision: a74adcb646602f5c5721405c10acac4f3e615ba9
+  specs:
+    spree_wholesale (0.59.0.0)
+      spree_auth (>= 0.60.0)
+      spree_core (>= 0.60.0)
+
+GIT
   remote: git://github.com/minustehbare/spree-batch-products.git
   revision: bbc291ad6e1bcfaa81b2cbfa1920102cc2b62b3a
   specs:
@@ -58,14 +66,6 @@ GIT
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
-
-GIT
-  remote: git://github.com/sanarothe/spree_wholesale
-  revision: 5ffeb3010f848cb29935f25cc29a32808776eb91
-  specs:
-    spree_wholesale (0.59.0.0)
-      spree_auth (>= 0.60.0)
-      spree_core (>= 0.60.0)
 
 GIT
   remote: git://github.com/spree/spree.git

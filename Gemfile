@@ -11,7 +11,7 @@ gem 'deface'
 gem 'spree', :git => 'git://github.com/spree/spree.git'
 gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
-gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale'
+gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale'
 gem 'spree_batch_products', :git => 'git://github.com/minustehbare/spree-batch-products.git'
 
 
