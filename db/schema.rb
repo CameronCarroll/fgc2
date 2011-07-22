@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110314192118) do
+ActiveRecord::Schema.define(:version => 20110722041107) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -106,6 +106,21 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.string   "gateway_payment_profile_id"
   end
 
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
   create_table "gateways", :force => true do |t|
     t.string   "type"
     t.string   "name"
@@ -193,13 +208,13 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.string   "number",               :limit => 15
-    t.decimal  "item_total",                         :precision => 8, :scale => 2, :default => 0.0, :null => false
-    t.decimal  "total",                              :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "item_total",                         :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.decimal  "total",                              :precision => 8, :scale => 2, :default => 0.0,   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "state"
-    t.decimal  "adjustment_total",                   :precision => 8, :scale => 2, :default => 0.0, :null => false
-    t.decimal  "credit_total",                       :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.decimal  "adjustment_total",                   :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.decimal  "credit_total",                       :precision => 8, :scale => 2, :default => 0.0,   :null => false
     t.datetime "completed_at"
     t.integer  "bill_address_id"
     t.integer  "ship_address_id"
@@ -209,6 +224,7 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
     t.string   "payment_state"
     t.string   "email"
     t.text     "special_instructions"
+    t.boolean  "wholesale",                                                        :default => false
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
@@ -251,6 +267,20 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
 
   add_index "preferences", ["owner_id", "owner_type", "name", "group_id", "group_type"], :name => "ix_prefs_on_owner_attr_pref", :unique => true
 
+  create_table "product_datasheets", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "xls_file_name"
+    t.integer  "xls_file_size"
+    t.string   "xls_content_type"
+    t.datetime "processed_at"
+    t.datetime "deleted_at"
+    t.integer  "matched_records"
+    t.integer  "updated_records"
+    t.integer  "failed_records"
+    t.integer  "failed_queries"
+  end
+
   create_table "product_groups", :force => true do |t|
     t.string "name"
     t.string "permalink"
@@ -263,6 +293,15 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
   create_table "product_groups_products", :id => false, :force => true do |t|
     t.integer "product_id"
     t.integer "product_group_id"
+  end
+
+  create_table "product_imports", :force => true do |t|
+    t.string   "data_file_file_name"
+    t.string   "data_file_content_type"
+    t.integer  "data_file_file_size"
+    t.datetime "data_file_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "product_option_types", :force => true do |t|
@@ -538,20 +577,42 @@ ActiveRecord::Schema.define(:version => 20110314192118) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                         :default => "",    :null => false
-    t.decimal  "price",         :precision => 8, :scale => 2,                    :null => false
-    t.decimal  "weight",        :precision => 8, :scale => 2
-    t.decimal  "height",        :precision => 8, :scale => 2
-    t.decimal  "width",         :precision => 8, :scale => 2
-    t.decimal  "depth",         :precision => 8, :scale => 2
+    t.string   "sku",                                           :default => "",    :null => false
+    t.decimal  "price",           :precision => 8, :scale => 2,                    :null => false
+    t.decimal  "weight",          :precision => 8, :scale => 2
+    t.decimal  "height",          :precision => 8, :scale => 2
+    t.decimal  "width",           :precision => 8, :scale => 2
+    t.decimal  "depth",           :precision => 8, :scale => 2
     t.datetime "deleted_at"
-    t.boolean  "is_master",                                   :default => false
-    t.integer  "count_on_hand",                               :default => 0,     :null => false
-    t.decimal  "cost_price",    :precision => 8, :scale => 2
+    t.boolean  "is_master",                                     :default => false
+    t.integer  "count_on_hand",                                 :default => 0,     :null => false
+    t.decimal  "cost_price",      :precision => 8, :scale => 2
     t.integer  "position"
+    t.decimal  "wholesale_price", :precision => 8, :scale => 2, :default => 0.0,   :null => false
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"
+
+  create_table "wholesalers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "billing_address_id"
+    t.integer  "shipping_address_id"
+    t.string   "company"
+    t.string   "buyer_contact"
+    t.string   "manager_contact"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "resale_number"
+    t.string   "taxid"
+    t.string   "web_address"
+    t.string   "terms"
+    t.string   "alternate_email"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "wholesalers", ["billing_address_id", "shipping_address_id"], :name => "index_wholesalers_on_billing_address_id_and_shipping_address_id"
 
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"
