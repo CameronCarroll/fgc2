@@ -12,6 +12,17 @@
 
 ActiveRecord::Schema.define(:version => 20110722041107) do
 
+  create_table "activators", :force => true do |t|
+    t.string   "description"
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "starts_at"
+    t.string   "name"
+    t.string   "event_name"
+    t.string   "type"
+  end
+
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -43,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110722041107) do
     t.boolean  "locked"
     t.integer  "originator_id"
     t.string   "originator_type"
+    t.boolean  "eligible",                                      :default => true
   end
 
   add_index "adjustments", ["order_id"], :name => "index_adjustments_on_order_id"
@@ -105,21 +117,6 @@ ActiveRecord::Schema.define(:version => 20110722041107) do
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
   end
-
-  create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.string   "locked_by"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "gateways", :force => true do |t|
     t.string   "type"
@@ -295,15 +292,6 @@ ActiveRecord::Schema.define(:version => 20110722041107) do
     t.integer "product_group_id"
   end
 
-  create_table "product_imports", :force => true do |t|
-    t.string   "data_file_file_name"
-    t.string   "data_file_content_type"
-    t.integer  "data_file_file_size"
-    t.datetime "data_file_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "product_option_types", :force => true do |t|
     t.integer  "product_id"
     t.integer  "option_type_id"
@@ -367,8 +355,20 @@ ActiveRecord::Schema.define(:version => 20110722041107) do
   add_index "products_taxons", ["product_id"], :name => "index_products_taxons_on_product_id"
   add_index "products_taxons", ["taxon_id"], :name => "index_products_taxons_on_taxon_id"
 
+  create_table "promotion_action_line_items", :force => true do |t|
+    t.integer "promotion_action_id"
+    t.integer "variant_id"
+    t.integer "quantity",            :default => 1
+  end
+
+  create_table "promotion_actions", :force => true do |t|
+    t.integer "activator_id"
+    t.integer "position"
+    t.string  "type"
+  end
+
   create_table "promotion_rules", :force => true do |t|
-    t.integer  "promotion_id"
+    t.integer  "activator_id"
     t.integer  "user_id"
     t.integer  "product_group_id"
     t.datetime "created_at"
@@ -386,19 +386,6 @@ ActiveRecord::Schema.define(:version => 20110722041107) do
 
   add_index "promotion_rules_users", ["promotion_rule_id"], :name => "index_promotion_rules_users_on_promotion_rule_id"
   add_index "promotion_rules_users", ["user_id"], :name => "index_promotion_rules_users_on_user_id"
-
-  create_table "promotions", :force => true do |t|
-    t.string   "code"
-    t.string   "description"
-    t.integer  "usage_limit"
-    t.boolean  "combine"
-    t.datetime "expires_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "starts_at"
-    t.string   "match_policy", :default => "all"
-    t.string   "name"
-  end
 
   create_table "properties", :force => true do |t|
     t.string   "name"

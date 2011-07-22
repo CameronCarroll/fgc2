@@ -7,7 +7,8 @@ Hopefully, this will evolve into a propper class.
 var spree;
 if (!spree) spree = {};
 
-jQuery.noConflict() ;
+$ = jQuery;
+$j = jQuery;
 
 jQuery(document).ajaxStart(function(){
   jQuery("#progress").slideDown();
@@ -129,7 +130,7 @@ prep_autocomplete_data = function(data){
 
     var product = row['product'];
 
-    if(product['variants'].length>0 && expand_variants){
+    if(product['variants'].length>0 && ['expand_variants']){
       //variants
       return $.map(product['variants'], function(variant){
 
