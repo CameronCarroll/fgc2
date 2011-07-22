@@ -1,0 +1,8 @@
+--- 0.6
+  Stable release includes wholesale system and all layouts.
+  
+--- 0.7
+  Developing branch
+  - Implement raketask script for product import (bookmarked). May as well keep the export part,
+  just in case they want to do audits or inventory or something.
+  

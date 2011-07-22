@@ -6,5 +6,7 @@
 <% unless I18n.locale.to_s[0..1] == 'en' %>
   <%= javascript_include_tag ['localization/messages_', I18n.locale.to_s[0..1], '.js'].join %>
 <% end %>
+
+<%= render :partial => 'shared/styles' %>
 
 <%= yield :head %>
