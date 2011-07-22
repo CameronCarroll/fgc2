@@ -15,8 +15,8 @@ body.two-col div#wrapper {
 
 /* Main Nav list */
 ul#nav {
-position: relative;
-right: 200px;
+  position: relative;
+  right: 200px;
 }
 #nav li {
   margin: 0;
@@ -26,15 +26,15 @@ right: 200px;
 
 /* Subnav Lists */
 #nav li ul {
-line-height: 50px;
-font-size: 11px;
+  line-height: 50px;
+  font-size: 11px;
   display: none;
 
 position: absolute;
 top: 310 px;
 *top: 310px;
- height: 15px;
- left: 300 px;
+height: 15px;
+left: 300 px;
 
 z-index: 750;
 }
@@ -104,5 +104,21 @@ position: inherit;
 vertical-align: bottom;
 }
 
-div#fgcMenu {
+div#boxlinks {
+margin:50px;
 }
+
+div#boxlinks a {
+border: 1px solid #009999;
+padding: 10px;
+text-decoration: none;
+margin: 18px;
+color: #006363;
+font-weight: bold;
+}
+
+div#boxlinks a:hover {
+background: #1D7373;
+color: #5CCCCC;
+}
+

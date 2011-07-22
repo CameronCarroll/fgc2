@@ -1,6 +1,7 @@
 Fgc2::Application.routes.draw do
   get "home/index"
   root :to => "home#index"
+  match "/sales" => redirect("/wholesalers")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,23 +8,17 @@ Spree (Ecommerce framework) running upon Ruby on Rails (Web framework.)
 
 Code maintenance information:
 
-If unfamiliar with Rails, maintenance of this site will be a bit tricky. A reasonable knowledge of Ruby
-syntax is needed, along with the correct development environment.
-The code sits, currently, in the github repository and also in the Heroku repository. In order to update
-the production website, you must push the changes to Heroku git repo.
+If unfamiliar with Rails, maintenance of this site will be a bit tricky. A reasonable knowledge of Rubysyntax is needed, along with the correct development environment.
+The code sits, currently, in the github repository and also in the Heroku repository. In order to updatethe production website, you must push the changes to Heroku git repo.
+
+Warning, ye who enter. There are dragons, and they bite. One of them is named 'spaghetti' and the other is named 'code.'
 
  --- What's the correct development environment?
-use the googles to install the following:
-1. Install ruby (1.9 or higher preferably)
-2. Install rubygems
-3. Install mySQL (development database)
-4. Use a text editor with ruby (or even better, rails) syntax highlighting and structuring. Redcar, SciTE,
-textmate, et cetera. Or opt for a full rails IDE (netbeans, radrails)
-5. use rubygems to install rails [gem install rails]
-6. Install git
-6. use rubygems to install taps [gem install taps] (you need to install sqlite3 for this to work.)
-7. rubygems to install heroku
-8. rubygems to install bundler
+
+Ruby (Preferably 1.9 or higher)
+Rails
+Git
+MySQL server
 
 [this explains how to push spree applications up to heroku, but this plugin is already in gemfile]
 https://github.com/lukewendling/spree-heroku
