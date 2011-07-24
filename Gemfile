@@ -4,6 +4,7 @@ gem 'bundler'
 gem 'rails'
 gem 'rake'
 gem 'mysql2'
+gem 'deface', '0.5.0'
 
 
 
