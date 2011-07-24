@@ -4,13 +4,15 @@ gem 'bundler'
 gem 'rails'
 gem 'rake'
 gem 'mysql2'
+gem 'deface', '0.5.0'
+
 
 
 
 gem 'spree'
 gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
-gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale'
+gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale'
 
 
 

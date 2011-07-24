@@ -260,7 +260,7 @@ legend {
 }
 body {
   margin-top: 10px;
-  /* background: #ffffff url(../images/body-back.png) top left repeat-x; */
+  background: #ffffff url(../images/body-back.png) top left repeat-x;
 }
 div.left {
   float: left;
@@ -271,13 +271,12 @@ div.right {
   width: 49%;
 }
 a { outline: none; }
-
 #wrapper {
+  background: transparent url(../images/wrapper-back.png) top center no-repeat;
   padding: 25px 20px 20px;
   position: relative;
 }
-    
-
+body.two-col #wrapper { background-image: url(../images/wrapper-back-2.png); }
 .container {
   width: 950px;
   margin: 0 auto;
@@ -299,20 +298,18 @@ body.one-col #content {
   display: inline;
   float: left;
   width: 950px;
-  z-index: -5;
 }
 body.two-col #content {
   display: inline;
   float: left;
   width: 750px;
-  z-index: -5;
 }
 #header {
   position: relative;
   color: #2e6ab1;
   clear: both;
 }
-#header a { color: #1D7373; }
+#header a { color: #2e6ab1; }
 #header a:hover { color: #eeeeee; }
 #footer {
   padding-top: 2em;
@@ -344,7 +341,7 @@ p img {
 .navigation-list li a {
   cursor: pointer !important;
   text-decoration: none;
-  color: #1D7373;
+  color: #333333;
   display: block;
   line-height: 2.5em;
   padding-left: 20px;
@@ -397,9 +394,7 @@ p img {
   color: #666666;
 }
 .breadcrumbs ul li span { color: #333333; }
-div#login-bar { 
-  display: inline;
-}
+div#login-bar { display: inline; }
 ul#language-bar {
   list-style-type: none;
   margin: 0px;
@@ -413,14 +408,13 @@ ul#language-bar li {
 }
 ul#language-bar strong { font-weight: normal; }
 ul#nav-bar {
-line-height: 50px;
+  line-height: 50px;
   float: right;
   clear: both;
   font-size: 1.2em;
   list-style: none;
   margin: 0;
   padding: 0;
-  vertical-align: top;
 }
 ul#nav-bar li {
   float: left;
@@ -608,7 +602,6 @@ p button img { margin: 0 5px 0 0; }
   list-style: none;
   margin: 2em 0px 0px 0px;
   padding: 0px;
-  z-index: -5;
 }
 .product-listing li {
   -moz-border-radius: 3px;
@@ -635,7 +628,7 @@ p button img { margin: 0 5px 0 0; }
   padding: 5px;
   width: 150px;
   min-height: 60px;
-  /*  background: #ffffff url(../images/shadow_top.png) 0px -35px repeat-x; */
+  background: #ffffff url(../images/shadow_top.png) 0px -35px repeat-x;
   border-top: 1px solid #ffffff;
 }
 .product-listing li a.info span { display: block; }
