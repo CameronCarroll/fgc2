@@ -6,6 +6,15 @@ GIT
       spree_core
 
 GIT
+  remote: git://github.com/sanarothe/spree_dist
+  revision: 8f4a7132d4248470739707353dd57f170f2970db
+  specs:
+    spree_distribution (0.59.1.7)
+      deface
+      spree_auth (>= 0.60.0)
+      spree_core (>= 0.60.0)
+
+GIT
   remote: git://github.com/sanarothe/spree_wholesale
   revision: eaf71a75b86f2130108aff16102eab939f6ef1a4
   specs:
@@ -95,7 +104,7 @@ GEM
     paperclip (2.3.8)
       activerecord
       activesupport
-    polyglot (0.3.1)
+    polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
@@ -159,10 +168,11 @@ GEM
     state_machine (0.9.4)
     stringex (1.0.3)
     thor (0.14.6)
-    treetop (1.4.9)
+    treetop (1.4.10)
+      polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    warden (1.0.4)
+    warden (1.0.5)
       rack (>= 1.0)
     will_paginate (3.0.pre2)
     xml-simple (1.1.0)
@@ -178,5 +188,6 @@ DEPENDENCIES
   rails
   rake
   spree
+  spree_distribution!
   spree_heroku (= 1.1.0)!
   spree_wholesale!

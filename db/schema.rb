@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717013138) do
+ActiveRecord::Schema.define(:version => 20110728015450) do
 
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
@@ -105,6 +105,27 @@ ActiveRecord::Schema.define(:version => 20110717013138) do
     t.string   "gateway_customer_profile_id"
     t.string   "gateway_payment_profile_id"
   end
+
+  create_table "distributors", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "billing_address_id"
+    t.integer  "shipping_address_id"
+    t.string   "company"
+    t.string   "buyer_contact"
+    t.string   "manager_contact"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "resale_number"
+    t.string   "taxid"
+    t.string   "web_address"
+    t.string   "terms"
+    t.string   "alternate_email"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "distributors", ["billing_address_id", "shipping_address_id"], :name => "index_distributors_on_billing_address_id_and_shipping_address_id"
 
   create_table "gateways", :force => true do |t|
     t.string   "type"
@@ -210,6 +231,7 @@ ActiveRecord::Schema.define(:version => 20110717013138) do
     t.string   "email"
     t.text     "special_instructions"
     t.boolean  "wholesale",                                                        :default => false
+    t.boolean  "distribution",                                                     :default => false
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
@@ -539,18 +561,19 @@ ActiveRecord::Schema.define(:version => 20110717013138) do
 
   create_table "variants", :force => true do |t|
     t.integer  "product_id"
-    t.string   "sku",                                           :default => "",    :null => false
-    t.decimal  "price",           :precision => 8, :scale => 2,                    :null => false
-    t.decimal  "weight",          :precision => 8, :scale => 2
-    t.decimal  "height",          :precision => 8, :scale => 2
-    t.decimal  "width",           :precision => 8, :scale => 2
-    t.decimal  "depth",           :precision => 8, :scale => 2
+    t.string   "sku",                                              :default => "",    :null => false
+    t.decimal  "price",              :precision => 8, :scale => 2,                    :null => false
+    t.decimal  "weight",             :precision => 8, :scale => 2
+    t.decimal  "height",             :precision => 8, :scale => 2
+    t.decimal  "width",              :precision => 8, :scale => 2
+    t.decimal  "depth",              :precision => 8, :scale => 2
     t.datetime "deleted_at"
-    t.boolean  "is_master",                                     :default => false
-    t.integer  "count_on_hand",                                 :default => 0,     :null => false
-    t.decimal  "cost_price",      :precision => 8, :scale => 2
+    t.boolean  "is_master",                                        :default => false
+    t.integer  "count_on_hand",                                    :default => 0,     :null => false
+    t.decimal  "cost_price",         :precision => 8, :scale => 2
     t.integer  "position"
-    t.decimal  "wholesale_price", :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.decimal  "wholesale_price",    :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.decimal  "distribution_price", :precision => 8, :scale => 2, :default => 0.0,   :null => false
   end
 
   add_index "variants", ["product_id"], :name => "index_variants_on_product_id"

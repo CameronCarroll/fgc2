@@ -13,7 +13,7 @@ gem 'spree'
 gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
 gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale'
-gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_wholesale', :branch => 'distributors'
+gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_dist'
 
 
 
