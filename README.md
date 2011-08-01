@@ -6,6 +6,7 @@ July 2011
 Spree ecommerce website built for FusionGlass Company.
 
 [To-Do List:]
+
 ---------------------
 ((Merge work_spree_distribution into master in staging environment and push to heroku to verify that it works.))
 
