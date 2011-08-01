@@ -16,7 +16,8 @@ GIT
 
 GIT
   remote: git://github.com/sanarothe/spree_wholesale.git
-  revision: abaf4eedbcdc1d4b2027e4dd159ea83fe31745d1
+  revision: 5043a8b32a56a67c69c18fc19e433ee022a095cf
+  branch: works_with_distr
   specs:
     spree_wholesale (0.59.0.6)
       deface (>= 0.6.0)
