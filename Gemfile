@@ -3,8 +3,8 @@ source 'http://rubygems.org'
 gem 'bundler'
 gem 'rails'
 gem 'rake'
-gem 'mysql2'
-gem 'deface', '0.5.0'
+gem 'sqlite3'
+gem 'deface', '>0.6.0'
 
 
 
@@ -12,8 +12,8 @@ gem 'deface', '0.5.0'
 gem 'spree'
 gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
-gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale'
-gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_wholesale', :branch => 'distributors'
+gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git', :branch => 'works_with_distr'
+gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
 
 
 
