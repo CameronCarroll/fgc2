@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/sanarothe/spree_distribution.git
-  revision: f1d58b825f581967f845a90897ef4e8a30045016
+  revision: f74349278d72b8e485c2e2d3148f33b12412958d
   specs:
     spree_distribution (0.59.0.6)
       deface (>= 0.6.0)

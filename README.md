@@ -13,3 +13,5 @@ Spree ecommerce website built for FusionGlass Company.
 ((Implement the generation rake-task. Source can be found in ar_loader branch))
 
 ((Implement tiered sales discounts for user classes))
+
+((Fix will_paginate for distributors))
