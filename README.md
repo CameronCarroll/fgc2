@@ -15,3 +15,5 @@ Spree ecommerce website built for FusionGlass Company.
 ((Implement tiered sales discounts for user classes))
 
 ((Fix will_paginate for distributors))
+
+((Update one of the batch product updating programs for heroku?))

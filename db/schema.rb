@@ -274,6 +274,20 @@ ActiveRecord::Schema.define(:version => 20110731052019) do
 
   add_index "preferences", ["owner_id", "owner_type", "name", "group_id", "group_type"], :name => "ix_prefs_on_owner_attr_pref", :unique => true
 
+  create_table "product_datasheets", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "xls_file_name"
+    t.integer  "xls_file_size"
+    t.string   "xls_content_type"
+    t.datetime "processed_at"
+    t.datetime "deleted_at"
+    t.integer  "matched_records"
+    t.integer  "updated_records"
+    t.integer  "failed_records"
+    t.integer  "failed_queries"
+  end
+
   create_table "product_groups", :force => true do |t|
     t.string "name"
     t.string "permalink"

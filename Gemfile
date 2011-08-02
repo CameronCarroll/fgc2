@@ -15,6 +15,10 @@ gem 'aws-s3'
 gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' #, :branch => 'works_with_distr'
 gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
 
+group :development do
+  gem 'spree_batch_products', :git => 'git://github.com/minustehbare/spree-batch-products.git', :branch => '0-60-stable'
+end
+
 
 
 # Use unicorn as the web server

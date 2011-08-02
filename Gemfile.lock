@@ -6,8 +6,17 @@ GIT
       spree_core
 
 GIT
+  remote: git://github.com/minustehbare/spree-batch-products.git
+  revision: 41882c6d7e5b3191dd0d2e9f14610ee11033161a
+  branch: 0-60-stable
+  specs:
+    spree_batch_products (0.50.0)
+      spreadsheet (>= 0.6.5.4)
+      spree_core (>= 0.60.0)
+
+GIT
   remote: git://github.com/sanarothe/spree_distribution.git
-  revision: f74349278d72b8e485c2e2d3148f33b12412958d
+  revision: 0e1b3f146ef5e1e845152862e1c94960899f4899
   specs:
     spree_distribution (0.59.0.6)
       deface (>= 0.6.0)
@@ -130,6 +139,9 @@ GEM
     rd_resource_controller (1.0.1)
     rd_unobtrusive_date_picker (0.1.0)
     rdoc (3.9.1)
+    ruby-ole (1.2.11.1)
+    spreadsheet (0.6.5.7)
+      ruby-ole (>= 1.0)
     spree (0.60.1)
       spree_api (= 0.60.1)
       spree_auth (= 0.60.1)
@@ -189,6 +201,7 @@ DEPENDENCIES
   rails
   rake
   spree
+  spree_batch_products!
   spree_distribution!
   spree_heroku (= 1.1.0)!
   spree_wholesale!
