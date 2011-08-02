@@ -15,7 +15,6 @@ desc "Generates taxonomy structure for website"
     Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Bridal", category.id, category.id)
     Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Necklaces", women.id, category.id)
     Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Bracelets", women.id, category.id)
-    Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Misc", category.id, category.id)
     Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Earrings", women.id, category.id)
     Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry Sets", category.id, category.id)
    
