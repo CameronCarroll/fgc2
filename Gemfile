@@ -16,7 +16,7 @@ gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' 
 gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
 
 group :development do
-  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git'#, :branch => 'add_variant_creation'
+  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => '0-60-stable'
 end
 
 

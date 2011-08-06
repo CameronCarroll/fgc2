@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: git://github.com/sanarothe/spree-batch-products.git
-  revision: cb4ea9cbadbe343731b7881e52fea1bd917edadf
-  branch: add_variant_creation
+  revision: 41882c6d7e5b3191dd0d2e9f14610ee11033161a
+  branch: 0-60-stable
   specs:
     spree_batch_products (0.50.0)
       spreadsheet (>= 0.6.5.4)
