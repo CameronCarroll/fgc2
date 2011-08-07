@@ -14,6 +14,9 @@ gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
 gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' #, :branch => 'works_with_distr'
 gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
+gem 'json'
+gem 'carrierwave'
+gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 
 group :development do
   gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => '0-60-stable'
