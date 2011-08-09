@@ -76,7 +76,7 @@ end
 
     desc "Generates taxonomy structure for website"
   task :gen_cat do
-    
+    load_environment
     category = Taxonomy.find_or_create_by_name "Category"
     accessories = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Accessories", category.id, category.id)
     men = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For Men", category.id, category.id)
@@ -84,7 +84,9 @@ end
     misc = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Miscellenia", category.id, category.id)
     jewelry = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry", women.id, category.id)
     bridal = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Bridal", category.id, category.id)
+    bridalsets = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry Sets", bridal.id, category.id)
     necklaces = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Necklaces", women.id, category.id)
+    pendants = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Pendants", women.id, category.id)
     bracelets = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Bracelets", women.id, category.id)
     earrings = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Earrings", women.id, category.id)
     sets = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry Sets", category.id, category.id)
@@ -93,7 +95,7 @@ end
     dishes = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Dishes", misc.id, category.id)
     clocks = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Timekeeping", accessories.id, category.id)
      office = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For the Office", accessories.id, category.id)
-     men = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For the Bar", accessories.id, category.id)
+     bar = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For the Bar", accessories.id, category.id)
 end #task :generate_taxons
   
   

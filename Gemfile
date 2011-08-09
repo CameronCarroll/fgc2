@@ -16,12 +16,11 @@ gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' 
 gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
 gem 'json'
 gem 'carrierwave'
-gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 
 group :development do
-  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => '0-60-stable'
+  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'add_variant_creation'
 end
-
 
 
 # Use unicorn as the web server
