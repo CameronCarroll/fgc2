@@ -19,7 +19,8 @@ gem 'carrierwave'
 gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 
 group :development do
-  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'add_variant_creation'
+  gem 'spree_batch_products', :path => 'C:\Users\Cameron\Documents\code\rails\spree-batch-products'
+  #gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'fix_option_types'
 end
 
 
