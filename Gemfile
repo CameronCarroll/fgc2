@@ -21,8 +21,8 @@ gem 'spree_essentials',    :git => 'git://github.com/citrus/spree_essentials.git
 gem 'spree_essential_cms', :git => 'git://github.com/citrus/spree_essential_cms.git'
 
 group :development do
-  gem 'spree_batch_products', :path => 'C:\Users\Cameron\Documents\code\rails\spree-batch-products'
-  #gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'fix_option_types'
+ # gem 'spree_batch_products', :path => 'C:\Users\Cameron\Documents\code\rails\spree-batch-products'
+  gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'flexi'
 end
 
 
