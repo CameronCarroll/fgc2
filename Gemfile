@@ -17,6 +17,8 @@ gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution
 gem 'json'
 gem 'carrierwave'
 gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+gem 'spree_essentials',    :git => 'git://github.com/citrus/spree_essentials.git'
+gem 'spree_essential_cms', :git => 'git://github.com/citrus/spree_essential_cms.git'
 
 group :development do
   gem 'spree_batch_products', :path => 'C:\Users\Cameron\Documents\code\rails\spree-batch-products'

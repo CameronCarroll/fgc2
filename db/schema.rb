@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110731052019) do
+ActiveRecord::Schema.define(:version => 20110812225947) do
 
   create_table "ad_hoc_option_types", :force => true do |t|
     t.integer  "product_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20110731052019) do
     t.integer  "attachment_width"
     t.integer  "attachment_height"
     t.text     "alt"
+    t.integer  "attachment_file_size"
   end
 
   add_index "assets", ["viewable_id"], :name => "index_assets_on_viewable_id"
@@ -110,6 +111,23 @@ ActiveRecord::Schema.define(:version => 20110731052019) do
   end
 
   add_index "configurations", ["name", "type"], :name => "index_configurations_on_name_and_type"
+
+  create_table "contents", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
+    t.string   "link_text"
+    t.string   "context"
+    t.boolean  "hide_title",              :default => false
+    t.integer  "position",                :default => 999
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "countries", :force => true do |t|
     t.string  "iso_name"
@@ -289,6 +307,20 @@ ActiveRecord::Schema.define(:version => 20110731052019) do
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "nav_title"
+    t.string   "path"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.integer  "position",         :default => 999
+    t.boolean  "accessible",       :default => true
+    t.boolean  "visible",          :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"
