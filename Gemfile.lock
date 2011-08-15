@@ -6,21 +6,6 @@ GIT
       spree_core
 
 GIT
-  remote: git://github.com/citrus/spree_essential_cms.git
-  revision: 5a4665d938c290e67ae5d6907d90088080e78761
-  specs:
-    spree_essential_cms (0.1.1)
-      spree_essentials (>= 0.2.0)
-
-GIT
-  remote: git://github.com/citrus/spree_essentials.git
-  revision: 8d4bf4951872621c35079a3a7b68339ad6dd6e55
-  specs:
-    spree_essentials (0.2.2)
-      rdiscount (>= 1.6.8)
-      spree_core (>= 0.60.0)
-
-GIT
   remote: git://github.com/jsqu99/spree_flexi_variants.git
   revision: a416deef927b06a1737ab9cb66471f24c4491272
   branch: pre-deface-stable
@@ -28,11 +13,11 @@ GIT
     spree_flexi_variants (1.0.0)
 
 GIT
-  remote: git://github.com/sanarothe/spree-batch-products.git
-  revision: 3a6e2329d61e81796e0d9fafc04e609afa8f481d
-  branch: flexi
+  remote: git://github.com/minustehbare/spree-batch-products.git
+  revision: b5d20e852c3098367cfeff09dcc057f7f8892b8c
+  branch: 0-60-stable
   specs:
-    spree_batch_products (0.50.4)
+    spree_batch_products (0.50.0)
       spreadsheet (>= 0.6.5.4)
       spree_core (>= 0.60.0)
 
@@ -163,7 +148,6 @@ GEM
       activesupport (~> 3.0)
     rd_resource_controller (1.0.1)
     rd_unobtrusive_date_picker (0.1.0)
-    rdiscount (1.6.8)
     rdoc (3.9.2)
     ruby-ole (1.2.11.1)
     spreadsheet (0.6.5.7)
@@ -231,8 +215,6 @@ DEPENDENCIES
   spree
   spree_batch_products!
   spree_distribution!
-  spree_essential_cms!
-  spree_essentials!
   spree_flexi_variants!
   spree_heroku (= 1.1.0)!
   spree_wholesale!

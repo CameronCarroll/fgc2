@@ -1,4 +1,6 @@
 Fgc2::Application.routes.draw do
+  get "contact/index"
+
   get "home/index"
   root :to => "home#index"
   match "/sales" => redirect("/wholesalers")

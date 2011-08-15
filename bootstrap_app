@@ -1,5 +1,0 @@
-after a rake db:reset
-
-
---- 1. rake db:bootstrap
---- 2. rake db:migrate spree_wholesale:create_role
