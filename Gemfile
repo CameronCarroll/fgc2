@@ -16,7 +16,11 @@ gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' 
 gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
 gem 'json'
 gem 'carrierwave'
-gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+gem 'spree_additional_calculators'
+gem 'spree_vat_fix', :git => 'git://github.com/dancinglightning/spree-vat-fix.git'
+
+#gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+gem 'spree_flexi_variants', :path => 'C:\Users\Cameron\Documents\code\rails\spree_flexi_variants'
 
 group :development do
  # gem 'spree_batch_products', :path => 'C:\Users\Cameron\Documents\code\rails\spree-batch-products'

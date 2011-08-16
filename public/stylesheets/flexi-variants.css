@@ -1,9 +1,5 @@
 fieldset{
-	background-color:#dddddd;
-
-	border-width:1px;
-	border-style:solid;
-	border-color:#666;
+	background-color:#fff;
 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:12px;
@@ -28,7 +24,7 @@ fieldset li {
 
 fieldset label {
   display: inline-block;
-  width: 120px;
+  width: auto;
 }
 #ad_hoc_options fieldset label {
 /*  margin-top: 10px;
@@ -36,6 +32,7 @@ fieldset label {
 }
 
 fieldset legend{
+  display:none;
 	background-color:#2e6ab1;
 
 	border-width:1px;

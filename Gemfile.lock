@@ -6,11 +6,11 @@ GIT
       spree_core
 
 GIT
-  remote: git://github.com/jsqu99/spree_flexi_variants.git
-  revision: a416deef927b06a1737ab9cb66471f24c4491272
-  branch: pre-deface-stable
+  remote: git://github.com/dancinglightning/spree-vat-fix.git
+  revision: 94192b0b3eb21d42447ee47429ccd2a654881371
   specs:
-    spree_flexi_variants (1.0.0)
+    spree_vat_fix (0.0.2)
+      spree_core (>= 0.30.0)
 
 GIT
   remote: git://github.com/minustehbare/spree-batch-products.git
@@ -38,6 +38,11 @@ GIT
       deface (>= 0.6.0)
       spree_auth (>= 0.60.0)
       spree_core (>= 0.60.0)
+
+PATH
+  remote: C:/Users/Cameron/Documents/code/rails/spree_flexi_variants
+  specs:
+    spree_flexi_variants (1.0.0)
 
 GEM
   remote: http://rubygems.org/
@@ -159,6 +164,8 @@ GEM
       spree_dash (= 0.60.1)
       spree_promo (= 0.60.1)
       spree_sample (= 0.60.1)
+    spree_additional_calculators (0.1.1)
+      spree_core (>= 0.50.2)
     spree_api (0.60.1)
       spree_auth (= 0.60.1)
       spree_core (= 0.60.1)
@@ -213,9 +220,11 @@ DEPENDENCIES
   rails
   rake
   spree
+  spree_additional_calculators
   spree_batch_products!
   spree_distribution!
   spree_flexi_variants!
   spree_heroku (= 1.1.0)!
+  spree_vat_fix!
   spree_wholesale!
   sqlite3

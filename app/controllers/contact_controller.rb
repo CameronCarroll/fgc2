@@ -1,4 +1,4 @@
-class ContactController < ApplicationController
+class ContactController < Spree::BaseController
   layout 'spree_application'
   def index
   end

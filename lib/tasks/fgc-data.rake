@@ -13,7 +13,9 @@ namespace :fgc do
     'size' => 'Size',
     'shape' => 'Shape',
     'cord' => 'Chain or Cord',
-    'silhouette' => 'Silhouette'
+    'silhouette' => 'Silhouette',
+    'word' => 'Word',
+    'evoswatch' => 'Evollution Series Swatch'
     }
 
     option_hash = {
@@ -27,6 +29,26 @@ namespace :fgc do
       'yellow' => 'Yellow',
       'copper' => 'Copper',
       'red' => 'Red'
+      },
+      'word' => {
+      'believe' => 'Believe',
+      'love' => 'Love',
+      'laugh' => 'Laugh',
+      'joy' => 'Joy',
+      'hope' => 'Hope',
+      'faith' => 'Faith',
+      'fate' => 'Fate',
+      'sister' => 'Sister',
+      'kiss' => 'Kiss',
+      'hug' => 'Hug',
+      'share' => 'Share',
+      'give' => 'Give',
+      'live' => 'Live',
+      'life' => 'Life',
+      'dance' => 'Dance',
+      'sing' => 'Sing',
+      'listen' => 'Listen',
+      'dream' => 'Dream'
       },
       'type' => {
     'clipon' => 'Clip-On',
@@ -57,7 +79,66 @@ namespace :fgc do
     'angel' => 'Angel Wings',
     },
     'swatch' => {
-    'tst' => 'Test Swatch'
+    'winkpink' => 'Make Them Wink Pink',
+    'peanut' => 'Peanut Butter & Jelly',
+    'mandy' => 'Mandy\'s Candy',
+    'york' => 'New York',
+    'copper' => 'Copper Cats',
+    'fairydst' => 'Fairy Dust',
+    'forestsun' => 'Forest Sunshine',
+    'goldgreen' => 'Golden Green',
+    'cliopal' => 'California Opal',
+    'irish' => 'Irish Opal',
+    'chocolate' => 'Chocolate Opal',
+    'lanigold' => 'Sweet Lani\'s Opal',
+    'amber' => 'Amber',
+    'azure' => 'Azure Sea',
+    'bluelav' => 'Blue Lavender',
+    'caligold' => 'California Gold',
+    'camp' => 'Campfire',
+    'cool' => 'Cool Turquoise',
+    'cran' => 'Cranberry',
+    'deep' => 'Deep Ocean',
+    'dsty' => 'Dusty Lilac',
+    'empurp' => 'Emerald Purple',
+    'frstnow' => 'First Snow',
+    'frost' => 'Frost',
+    'goldnug' => 'Gold Nugget',
+    'icejade' => 'Iced Jade',
+    'icemint' => 'Iced Mint',
+    'jade' => 'Jade Apple',
+    'lgunaov' => 'Laguna Over',
+    'lgunaun' => 'Laguna Under',
+    'lavice' => 'Lavender Ice',
+    'lighning' => 'Lightning Sky',
+    'lvlylvndr' => 'Lovely Lavender',
+    'marie' => 'Marie\'s Choice',
+    'marine' => 'Marine Reef',
+    'mauve' => 'Mauve Cream',
+    'mdnght' => 'Midnight Sky',
+    'jlp' => 'Mint Julip',
+    'ocn' => 'Ocean',
+    'pnkptls' => 'Pink Petals',
+    'rdopal' => 'Red Opal',
+    'sgn' => 'Signature',
+    'rylprp' => 'Royal Purple',
+    'sprpnk' => 'Spring Pink',
+    'smrtm' => 'Summer Time',
+    'tngdrm' => 'Tangerine Dream',
+    'snflwr' => 'Sunflower',
+    'snrs' => 'Sunrise',
+    'teal_brk' => 'Teal Breaker',
+    'wrm_turq' => 'Warm Turquoise',
+    'wntr_sun' => 'Winter Sunrise',
+    },
+    'evoswatch' => {
+    'aweamber' => 'Awesome Amber',
+    'brillblue' => 'Brilliant Blue',
+    'gorgreen' => 'Gorgeous Green',
+    'paspink' => 'Passion Pink',
+    'pretpurp' => 'Pretty Purple',
+    'stunster' => 'Stunning Sterling',
+    'wintwhit' => 'Winter White'
     }
       }#end option_hash
         #// DATA ENDS HERE
@@ -82,7 +163,6 @@ end
     men = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For Men", category.id, category.id)
     women = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For Women", category.id, category.id)
     misc = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Miscellenia", category.id, category.id)
-    jewelry = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry", women.id, category.id)
     bridal = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Bridal", category.id, category.id)
     bridalsets = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Jewelry Sets", bridal.id, category.id)
     necklaces = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Necklaces", women.id, category.id)
@@ -96,6 +176,7 @@ end
     clocks = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Timekeeping", accessories.id, category.id)
      office = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For the Office", accessories.id, category.id)
      bar = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("For the Bar", accessories.id, category.id)
+    evo = Taxon.find_or_create_by_name_and_parent_id_and_taxonomy_id("Evollution Series", pendants.id, category.id)
 end #task :generate_taxons
   
   

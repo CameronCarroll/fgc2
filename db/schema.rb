@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(:version => 20110812225947) do
     t.datetime "updated_at"
   end
 
+  create_table "additional_calculator_rates", :force => true do |t|
+    t.integer  "calculator_id",                                                                :null => false
+    t.string   "calculator_type", :limit => 50,                                                :null => false
+    t.integer  "rate_type",                                                   :default => 0,   :null => false
+    t.decimal  "from_value",                    :precision => 8, :scale => 3, :default => 0.0, :null => false
+    t.decimal  "to_value",                      :precision => 8, :scale => 3, :default => 0.0, :null => false
+    t.decimal  "rate",                          :precision => 8, :scale => 2, :default => 0.0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "additional_calculator_rates", ["calculator_id"], :name => "index_additional_calculator_rates_on_calculator_id"
+  add_index "additional_calculator_rates", ["calculator_type"], :name => "index_additional_calculator_rates_on_calculator_type"
+  add_index "additional_calculator_rates", ["from_value"], :name => "index_additional_calculator_rates_on_from_value"
+  add_index "additional_calculator_rates", ["rate_type"], :name => "index_additional_calculator_rates_on_rate_type"
+  add_index "additional_calculator_rates", ["to_value"], :name => "index_additional_calculator_rates_on_to_value"
+
   create_table "addresses", :force => true do |t|
     t.string   "firstname"
     t.string   "lastname"
@@ -97,11 +114,14 @@ ActiveRecord::Schema.define(:version => 20110812225947) do
 
   create_table "calculators", :force => true do |t|
     t.string   "type"
-    t.integer  "calculable_id",   :null => false
-    t.string   "calculable_type", :null => false
+    t.integer  "calculable_id",                               :null => false
+    t.string   "calculable_type",                             :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_additional_calculator", :default => false
   end
+
+  add_index "calculators", ["is_additional_calculator"], :name => "index_calculators_on_is_additional_calculator"
 
   create_table "configurations", :force => true do |t|
     t.string   "name"
@@ -162,7 +182,6 @@ ActiveRecord::Schema.define(:version => 20110812225947) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "data_validation"
   end
 
   create_table "customized_product_options", :force => true do |t|
@@ -171,6 +190,7 @@ ActiveRecord::Schema.define(:version => 20110812225947) do
     t.string   "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "customization_image"
   end
 
   create_table "distributors", :force => true do |t|
