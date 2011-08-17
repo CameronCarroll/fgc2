@@ -6,6 +6,13 @@ GIT
       spree_core
 
 GIT
+  remote: git://github.com/changinglanes/Spree-PrettyPhoto.git
+  revision: e8dcec4c3b0649bfdc09c6a7c99bb91607537b49
+  specs:
+    spree_pretty_photo (1.0.0)
+      spree_core (>= 0.40.0)
+
+GIT
   remote: git://github.com/dancinglightning/spree-vat-fix.git
   revision: 94192b0b3eb21d42447ee47429ccd2a654881371
   specs:
@@ -23,7 +30,7 @@ GIT
 
 GIT
   remote: git://github.com/sanarothe/spree_distribution.git
-  revision: 0e1b3f146ef5e1e845152862e1c94960899f4899
+  revision: e89fc73f369cec2258344f05417c16d34c6a22a5
   specs:
     spree_distribution (0.59.0.6)
       deface (>= 0.6.0)
@@ -225,6 +232,7 @@ DEPENDENCIES
   spree_distribution!
   spree_flexi_variants!
   spree_heroku (= 1.1.0)!
+  spree_pretty_photo!
   spree_vat_fix!
   spree_wholesale!
   sqlite3

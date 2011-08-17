@@ -18,6 +18,7 @@ gem 'json'
 gem 'carrierwave'
 gem 'spree_additional_calculators'
 gem 'spree_vat_fix', :git => 'git://github.com/dancinglightning/spree-vat-fix.git'
+gem 'spree_pretty_photo', :git => 'git://github.com/changinglanes/Spree-PrettyPhoto.git'
 
 #gem 'spree_flexi_variants', :git=>'git://github.com/jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 gem 'spree_flexi_variants', :path => 'C:\Users\Cameron\Documents\code\rails\spree_flexi_variants'

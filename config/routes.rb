@@ -1,11 +1,12 @@
 Fgc2::Application.routes.draw do
-  get "contact/index"
+  get "sales/index"
 
+  get "contact/index"
+  match 'contact', :to => "contact#index"
   get "home/index"
   root :to => "home#index"
-  match "/sales" => redirect("/wholesalers")
+  match 'sales' , :to => "sales#index"
   resources :products
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
