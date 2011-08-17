@@ -7,3 +7,7 @@ Spree::Config.set(:products_per_page => 20)
 Spree::Config.set(:admin_products_per_page => 20)
 Spree::Config.set(:admin_interface_logo => "fgc_banner.png")
 end
+
+[
+      Calculator::PaulFlat
+    ].each(&:register)

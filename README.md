@@ -14,4 +14,4 @@ Spree ecommerce website built for FusionGlass Company.
 
 ((Update one of the batch product updating programs for heroku?)) Hell no
 
-(())
+((update links to accomodate name changes in latest spreadsheet!))

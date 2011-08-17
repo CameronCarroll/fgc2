@@ -1,4 +1,7 @@
 Fgc2::Application.routes.draw do
+  get "notes/index"
+  match 'notes', :to => "admin/notes#index"
+
   get "sales/index"
 
   get "contact/index"

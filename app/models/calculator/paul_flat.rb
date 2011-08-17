@@ -1,9 +1,9 @@
-class Calculator::FlatRate2 < Calculator
+class Calculator::PaulFlat < Calculator
   preference :box_price, :decimal, :default => 0
   preference :threshold, :decimal, :default => 0
   
   def self.description
-    "Flat rate that takes into account a limit on how many items fit into a flate rate box. Every time the shipping cost exceeds the threshold, another flat-rate box is added to the cost."
+    "Flat Rate Per"
   end
   
   def self.register 
