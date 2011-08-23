@@ -7,7 +7,14 @@ Spree::Config.set(:products_per_page => 20)
 Spree::Config.set(:admin_products_per_page => 20)
 Spree::Config.set(:admin_interface_logo => "fgc_banner.png")
 end
-
-[
-      Calculator::PaulFlat
-    ].each(&:register)
+    
+    #register all calculators
+    [
+        Calculator::PaulFlat
+      ].each do |c_model|
+        begin
+          c_model.register if c_model.table_exists?
+        rescue Exception => e
+          $stderr.puts "Error registering calculator #{c_model}"
+        end
+      end

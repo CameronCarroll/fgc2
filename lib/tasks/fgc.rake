@@ -16,7 +16,8 @@ namespace :fgc do
     'spree_wholesale:create_role',
     'spree_distribution:create_role',
     'spree_flexi_variants:install',
-    'spree_additional_calculators:install',
+    'spree_pretty_photo:install',
+    'spree_zipcode_zones:install',
     'fgc:gen_cat',
     'fgc:gen_options'
     ]

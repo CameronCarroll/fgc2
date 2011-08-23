@@ -6,24 +6,37 @@ class Calculator::PaulFlat < Calculator
     "Flat Rate Per"
   end
   
-  def self.register 
-    super
-    ShippingMethod.register_calculator(self)
-  end
+  #def self.register 
+  #  super
+  #  ShippingMethod.register_calculator(self)
+  #end
   
   def compute(object)
-    total_cost = objects.line_items.map(&:price).sum
-    total_shipping_cost = 0
-    if total_cost < self.preferred_threshold
-     total_shipping_cost += self.preferred_box_price
+    return unless object.present? and object.line_items.present?
+    price = self.preferred_box_price
+    limit = self.preferred_threshold
+    
+   # total_cost_int = object.line_items.map(&:price).sum
+  total_cost_int = 0
+  
+  object.line_items.each do |item|
+    total_cost_int += item.amount
+  end
+    
+    return if total_cost_int == 0.00
+    
+    if total_cost_int < limit
+      total_shipping_cost = price
     else
-      while total_cost > self.preferred_threshold
-      total_cost -= preferred_threshold
-      total_shipping_cost += self.preferred_box_price
+      total_shipping_cost = price
+      while total_cost_int > limit
+        total_shipping_cost += price
+        total_cost_int -= limit
       end
     end
     
-    return total_shipping_cost
+    value = (total_shipping_cost * 100).round.to_f / 100
+    return value
       
   end
   

@@ -739,6 +739,12 @@ ActiveRecord::Schema.define(:version => 20110812225947) do
 
   add_index "wholesalers", ["billing_address_id", "shipping_address_id"], :name => "index_wholesalers_on_billing_address_id_and_shipping_address_id"
 
+  create_table "zipcodes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "zone_members", :force => true do |t|
     t.integer  "zone_id"
     t.integer  "zoneable_id"
