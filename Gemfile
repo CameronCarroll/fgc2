@@ -12,8 +12,13 @@ gem 'deface', '>0.6.0'
 gem 'spree'
 gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
-gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' #, :branch => 'works_with_distr'
-gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
+
+#gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' #, :branch => 'works_with_distr'
+gem 'spree_wholesale', :path => 'C:\Users\Cameron\Documents\code\rails\spree_wholesale'
+
+#gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
+gem 'spree_distribution', :path => 'C:\Users\Cameron\Documents\code\rails\spree_distribution'
+
 gem 'json'
 gem 'carrierwave'
 
@@ -38,6 +43,8 @@ group :development do
   #gem 'spree_batch_products', :git => 'git://github.com/sanarothe/spree-batch-products.git', :branch => 'flexi'
   gem 'spree_batch_products', :git => 'git://github.com/minustehbare/spree-batch-products.git', :branch => '0-60-stable'
 end
+
+
 
 
 # Use unicorn as the web server
