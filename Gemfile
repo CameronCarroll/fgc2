@@ -5,6 +5,7 @@ gem 'rails'
 gem 'rake'
 gem 'sqlite3'
 gem 'deface', '>0.6.0'
+gem 'rmagick'
 
 
 
