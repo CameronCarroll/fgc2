@@ -15,10 +15,11 @@ gem 'spree_heroku', '1.1.0', :git => 'git://github.com/amedse/spree-heroku.git'
 gem 'aws-s3'
 
 #gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git' #, :branch => 'works_with_distr'
-gem 'spree_wholesale', :path => 'C:\Users\Cameron\Documents\code\rails\spree_wholesale'
+gem 'spree_wholesale', :git => 'git://github.com/sanarothe/spree_wholesale.git'
+#gem 'spree_wholesale', :path => 'C:\Users\Cameron\Documents\code\rails\spree_wholesale'
 
-#gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
-gem 'spree_distribution', :path => 'C:\Users\Cameron\Documents\code\rails\spree_distribution'
+gem 'spree_distribution', :git => 'git://github.com/sanarothe/spree_distribution.git'
+#gem 'spree_distribution', :path => 'C:\Users\Cameron\Documents\code\rails\spree_distribution'
 
 gem 'json'
 gem 'carrierwave'
